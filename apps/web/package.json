@@ -1,0 +1,8 @@
+{
+  "name": "hmis-web",
+  "private": true,
+  "scripts": {
+    "dev": "node index.js",
+    "start": "node index.js"
+  }
+}

@@ -1,0 +1,73 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="Fe6JreXGrqJDcHwBOivA">
+    <mxGraphModel dx="1414" dy="1975" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="si3Narjlc8itfCn-_PYO-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="RUST SERVER" vertex="1">
+          <mxGeometry height="200" width="390" x="190" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="si3Narjlc8itfCn-_PYO-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="DOCKER (POSTGREL DATABASE)&lt;div&gt;&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="390" x="190" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="si3Narjlc8itfCn-_PYO-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="TAURI DESKTOP" vertex="1">
+          <mxGeometry height="60" width="120" x="90" y="-135" as="geometry" />
+        </mxCell>
+        <mxCell id="si3Narjlc8itfCn-_PYO-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="NEXT.JS FRAMEWORK" vertex="1">
+          <mxGeometry height="50" width="150" x="330" y="-130" as="geometry" />
+        </mxCell>
+        <mxCell id="si3Narjlc8itfCn-_PYO-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="FLUTTER. MOBILE" vertex="1">
+          <mxGeometry height="60" width="120" x="600" y="-130" as="geometry" />
+        </mxCell>
+        <mxCell id="si3Narjlc8itfCn-_PYO-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API ENDPOINTS" vertex="1">
+          <mxGeometry height="50" width="640" x="85" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="si3Narjlc8itfCn-_PYO-17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="NginX" vertex="1">
+          <mxGeometry height="40" width="640" x="80" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="si3Narjlc8itfCn-_PYO-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="GLOBAL MIDDLE WARE" vertex="1">
+          <mxGeometry height="50" width="640" x="80" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="si3Narjlc8itfCn-_PYO-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="DATA- VALIDATION LAYER" vertex="1">
+          <mxGeometry height="60" width="640" x="80" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="si3Narjlc8itfCn-_PYO-20" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.333;entryY=1.017;entryDx=0;entryDy=0;entryPerimeter=0;" target="si3Narjlc8itfCn-_PYO-13" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="130" y="60" as="sourcePoint" />
+            <mxPoint x="180" y="10" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="si3Narjlc8itfCn-_PYO-21" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.453;entryY=1.08;entryDx=0;entryDy=0;entryPerimeter=0;" target="si3Narjlc8itfCn-_PYO-14" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="400" y="60" as="sourcePoint" />
+            <mxPoint x="450" y="10" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="si3Narjlc8itfCn-_PYO-22" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="si3Narjlc8itfCn-_PYO-15" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="660" y="60" as="sourcePoint" />
+            <mxPoint x="710" y="10" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="si3Narjlc8itfCn-_PYO-23" edge="1" parent="1" source="si3Narjlc8itfCn-_PYO-18" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.484;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="340" y="150" as="sourcePoint" />
+            <mxPoint x="390" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="si3Narjlc8itfCn-_PYO-24" edge="1" parent="1" source="si3Narjlc8itfCn-_PYO-19" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.484;exitY=-0.017;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="340" y="240" as="sourcePoint" />
+            <mxPoint x="390" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="si3Narjlc8itfCn-_PYO-27" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="400" y="350" as="sourcePoint" />
+            <mxPoint x="400" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
