@@ -1,0 +1,34 @@
+[ Patient Walk-in ]
+         │
+         ▼
+ 1. REGISTRATION & VISITS ──► (INSERT: patients ──► INSERT: visits [status: 'active'])
+         │
+         ▼
+ 2. TRIAGE WORKFLOW       ──► (INSERT: triage) Updates Vitals & Sets Triage Level
+         │
+         ├───► [ Routine / Urgent ] ──► 3A. OUTPATIENT CLINICAL NOTES (temp_clinical_notes)
+         │                                       │
+         └───► [ Maternity Case ]   ──► 3B. MATERNITY & PARTOGRAPH   (maternity_temp_notes)
+                                                 │
+ ┌───────────────────────────────────────────────┴──────────────────────────────┐
+ │ 4. ORDERS & INVESTIGATIONS LOGIC (The Cart State Machines)                   │
+ │                                                                              │
+ │ ├──► PHARMACY    ──► INSERT: pharma_cart (status: 'pending')                 │
+ │ ├──► LABORATORY  ──► INSERT: lab_cart    (status: 'pending')                 │
+ │ └──► RADIOLOGY   ──► INSERT: imaging_cart(status: 'waiting')                 │
+ └───────────────────────────────────────────────┬──────────────────────────────┘
+                                                 │
+                                                 ▼
+ 5. CENTRAL BILLING GATEWAY ──► (INSERT: bills / UPDATE: billing_master)
+                                                 │ (Validates Payment Reference)
+                                                 ▼
+ ┌──────────────────────────────────────────────────────────────────────────────┐
+ │ 6. FULFILLMENT & CLINICAL EXECUTION (Post-Payment Triggers)                  │
+ │                                                                              │
+ │ ├──► PHARMACY    ──► UPDATE: pharma_cart    ──► INSERT: prescriptions        │
+ │ ├──► LABORATORY  ──► UPDATE: lab_cart       ──► INSERT: lab_results          │
+ │ └──► RADIOLOGY   ──► UPDATE: imaging_cart   ──► INSERT: radiology_reports    │
+ └───────────────────────────────────────────────┬──────────────────────────────┘
+                                                 │
+                                                 ▼
+ 7. ENCOUNTER DISCHARGE   ──► (UPDATE: visits [status: 'completed']) ──► [ Archive Data ]
