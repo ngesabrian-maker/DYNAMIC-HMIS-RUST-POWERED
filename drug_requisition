@@ -1,0 +1,17 @@
+[ Staff Member Needs Stock ]
+              │
+              ▼
+ 1. REQUEST INITIATION   ──► (INSERT: pharmacy_stock_requests [status: 'pending'])
+              │
+              ▼
+ 2. APPROVAL GATEWAY     ──► (UPDATE: pharmacy_stock_requests [status: 'approved' | 'rejected'])
+              │
+   ┌──────────┴──────────┐
+   ▼ (If Approved)       ▼ (If Rejected)
+ 3A. STOCK ISSUANCE     3B. TERMINATION ──► [ Notify Requester ]
+   │
+   ├──► UPDATE: pharmacy_inventory (Deduct Central Stock)
+   └──► UPDATE: destination_inventory (Add Department Stock)
+              │
+              ▼
+ 4. AUDIT & LOGGING      ──► (INSERT: pharmacy_stock_logs)
