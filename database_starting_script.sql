@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS hmis.anc_temp_notes
 CREATE TABLE IF NOT EXISTS hmis.billing_master
 (
     billing_id serial NOT NULL,
-    visit_id character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    visit_id integer NOT NULL,
     patient_id integer NOT NULL,
     department character varying(50) COLLATE pg_catalog."default" NOT NULL,
     service_code integer NOT NULL,
@@ -580,6 +580,14 @@ ALTER TABLE IF EXISTS hmis.billing_master
     ON DELETE NO ACTION;
 
 
+ALTER TABLE IF EXISTS hmis.billing_master
+    ADD CONSTRAINT billing_master_visit_id_fkey FOREIGN KEY (visit_id)
+    REFERENCES hmis.visits (visit_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+
 ALTER TABLE IF EXISTS hmis.clinical_notes
     ADD CONSTRAINT clinical_notes_patient_id_fkey FOREIGN KEY (patient_id)
     REFERENCES hmis.patients (patient_id) MATCH SIMPLE
@@ -627,6 +635,22 @@ ALTER TABLE IF EXISTS hmis.imaging_cart
     NOT VALID;
 
 
+ALTER TABLE IF EXISTS hmis.inventory_items
+    ADD CONSTRAINT inventory_items_created_by_fkey FOREIGN KEY (created_by)
+    REFERENCES hmis.staff (staff_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+
+ALTER TABLE IF EXISTS hmis.lab_cart
+    ADD CONSTRAINT lab_cart_collected_by_fkey FOREIGN KEY (collected_by)
+    REFERENCES hmis.staff (staff_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+
 ALTER TABLE IF EXISTS hmis.lab_cart
     ADD CONSTRAINT lab_cart_lab_code_fkey FOREIGN KEY (lab_code)
     REFERENCES hmis.lab_test (test_code) MATCH SIMPLE
@@ -638,6 +662,24 @@ CREATE INDEX IF NOT EXISTS idx_lab_cart_code
 
 
 ALTER TABLE IF EXISTS hmis.lab_cart
+    ADD CONSTRAINT lab_cart_patient_id_fkey FOREIGN KEY (patient_id)
+    REFERENCES hmis.patients (patient_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+CREATE INDEX IF NOT EXISTS idx_lab_cart_patient
+    ON hmis.lab_cart(patient_id);
+
+
+ALTER TABLE IF EXISTS hmis.lab_cart
+    ADD CONSTRAINT lab_cart_requested_by_fkey FOREIGN KEY (requested_by)
+    REFERENCES hmis.staff (staff_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+
+ALTER TABLE IF EXISTS hmis.lab_cart
     ADD CONSTRAINT lab_cart_visit_id_fkey FOREIGN KEY (visit_id)
     REFERENCES hmis.visits (visit_id) MATCH SIMPLE
     ON UPDATE NO ACTION
@@ -645,6 +687,30 @@ ALTER TABLE IF EXISTS hmis.lab_cart
     NOT VALID;
 CREATE INDEX IF NOT EXISTS idx_lab_cart_visit
     ON hmis.lab_cart(visit_id);
+
+
+ALTER TABLE IF EXISTS hmis.lab_results
+    ADD CONSTRAINT lab_results_parameter_id_fkey FOREIGN KEY (parameter_id)
+    REFERENCES hmis.parameter (parameter_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+
+ALTER TABLE IF EXISTS hmis.lab_results
+    ADD CONSTRAINT lab_results_performed_by_fkey FOREIGN KEY (performed_by)
+    REFERENCES hmis.staff (staff_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+
+ALTER TABLE IF EXISTS hmis.lab_results
+    ADD CONSTRAINT lab_results_requested_by_fkey FOREIGN KEY (requested_by)
+    REFERENCES hmis.staff (staff_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
 
 
 ALTER TABLE IF EXISTS hmis.lab_results
@@ -681,6 +747,34 @@ ALTER TABLE IF EXISTS hmis.maternity_temp_notes
     NOT VALID;
 CREATE INDEX IF NOT EXISTS idx_maternity_notes_visit
     ON hmis.maternity_temp_notes(visit_id);
+
+
+ALTER TABLE IF EXISTS hmis.otc_queue
+    ADD CONSTRAINT otc_queue_otc_id_fkey FOREIGN KEY (otc_id)
+    REFERENCES hmis.staff (staff_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+CREATE INDEX IF NOT EXISTS otc_queue_pkey
+    ON hmis.otc_queue(otc_id);
+
+
+ALTER TABLE IF EXISTS hmis.otc_queue_items
+    ADD CONSTRAINT otc_queue_items_drug_id_fkey FOREIGN KEY (drug_id)
+    REFERENCES hmis.drugs (drug_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+
+ALTER TABLE IF EXISTS hmis.otc_queue_items
+    ADD CONSTRAINT otc_queue_items_otc_id_fkey FOREIGN KEY (otc_id)
+    REFERENCES hmis.otc_queue (otc_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+CREATE INDEX IF NOT EXISTS idx_otc_items_queue_id
+    ON hmis.otc_queue_items(otc_id);
 
 
 ALTER TABLE IF EXISTS hmis.parameter
@@ -855,6 +949,14 @@ ALTER TABLE IF EXISTS hmis.temp_clinical_notes
     NOT VALID;
 CREATE INDEX IF NOT EXISTS idx_notes_patient
     ON hmis.temp_clinical_notes(patient_id);
+
+
+ALTER TABLE IF EXISTS hmis.temp_clinical_notes
+    ADD CONSTRAINT temp_clinical_notes_staff_id_fkey FOREIGN KEY (staff_id)
+    REFERENCES hmis.staff (staff_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
 
 
 ALTER TABLE IF EXISTS hmis.temp_clinical_notes
