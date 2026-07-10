@@ -1,0 +1,207 @@
+/* ===============================
+   FHETCH HMIS - Landing Page
+==================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #edf6ff 0%,
+        #d9ecff 100%
+    );
+
+    color: #1f2937;
+}
+
+/* ===============================
+   Header
+==================================*/
+
+.hero {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+
+    border-radius: 20px;
+    background: white;
+    padding: 10px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.12);
+}
+
+.hero h1 {
+    margin-top: 25px;
+
+    font-size: 3rem;
+    color: #1565c0;
+    font-weight: 700;
+}
+
+.subtitle {
+    margin-top: 10px;
+
+    font-size: 1.2rem;
+
+    color: #546e7a;
+}
+
+/* ===============================
+   Main Card
+==================================*/
+
+.welcome {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    margin-top: 30px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 45px;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.08);
+}
+
+.welcome h2 {
+
+    color: #1565c0;
+
+    margin-bottom: 20px;
+
+    font-size: 2rem;
+}
+
+.welcome p {
+
+    color: #555;
+
+    line-height: 1.8;
+
+    font-size: 18px;
+}
+
+/* ===============================
+   Buttons
+==================================*/
+
+.actions {
+
+    margin-top: 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.actions button {
+
+    border: none;
+
+    cursor: pointer;
+
+    padding: 15px 35px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition: .25s;
+}
+
+#login-btn {
+
+    background: #1976d2;
+
+    color: white;
+}
+
+#login-btn:hover {
+
+    background: #0d47a1;
+
+    transform: translateY(-3px);
+}
+
+#about-btn {
+
+    background: white;
+
+    color: #1976d2;
+
+    border: 2px solid #1976d2;
+}
+
+#about-btn:hover {
+
+    background: #1976d2;
+
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+/* ===============================
+   Footer
+==================================*/
+
+footer {
+
+    margin-top: 50px;
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: #607d8b;
+}
+
+/* ===============================
+   Responsive
+==================================*/
+
+@media (max-width:768px){
+
+    .hero h1{
+        font-size:2.2rem;
+    }
+
+    .welcome{
+
+        margin:20px;
+
+        padding:30px;
+    }
+
+    .actions{
+
+        flex-direction:column;
+    }
+
+    .actions button{
+
+        width:100%;
+    }
+
+}
