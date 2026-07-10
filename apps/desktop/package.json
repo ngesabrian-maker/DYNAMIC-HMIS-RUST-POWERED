@@ -1,7 +1,0 @@
-{
-  "name": "hmis-desktop",
-  "private": true,
-  "scripts": {
-    "dev": "echo 'Tauri app placeholder'"
-  }
-}
