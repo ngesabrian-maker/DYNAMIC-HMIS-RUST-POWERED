@@ -1,0 +1,244 @@
+<section class="page">
+
+    <!-- ==========================================
+         PAGE HEADER
+    =========================================== -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>Patient Queue</h1>
+
+            <p>
+
+                Search a registered patient and add them to today's queue.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         SEARCH PATIENT
+    =========================================== -->
+
+    <div class="section">
+
+        <div class="section-header">
+
+            <h2>Search Patient</h2>
+
+        </div>
+
+        <div class="section-body">
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="search_patient">
+
+                        Patient Name / Patient ID / Phone
+
+                    </label>
+
+                    <input
+                        class="form-control"
+                        type="text"
+                        id="search_patient"
+                        placeholder="Search patient...">
+
+                </div>
+
+            </div>
+
+            <div class="table-responsive">
+
+                <table class="table" id="patientResults">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Phone</th>
+                            <th></th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         CREATE VISIT
+    =========================================== -->
+
+    <div class="section">
+
+        <div class="section-header">
+
+            <h2>Create Visit</h2>
+
+        </div>
+
+        <div class="section-body">
+
+            <form id="visitForm">
+
+                <input
+                    type="hidden"
+                    id="patient_id">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Selected Patient
+
+                        </label>
+
+                        <input
+                            class="form-control"
+                            id="selected_patient"
+                            readonly>
+
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="visit_type">
+
+                            Visit Type
+
+                        </label>
+
+                        <select
+                            class="form-control"
+                            id="visit_type"
+                            required>
+
+                            <option value="">Select Visit Type</option>
+                            <option>Consultation</option>
+                            <option>Review</option>
+                            <option>Emergency</option>
+                            <option>Procedure</option>
+                            <option>Laboratory</option>
+                            <option>Pharmacy</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="payment_mode">
+
+                            Payment Mode
+
+                        </label>
+
+                        <select
+                            class="form-control"
+                            id="payment_mode"
+                            required>
+
+                            <option value="">Select Payment</option>
+                            <option>Cash</option>
+                            <option>Insurance</option>
+                            <option>SHA</option>
+                            <option>NHIF</option>
+                            <option>Corporate</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="form-row form-actions">
+
+                    <button
+                        class="btn btn-primary"
+                        type="submit">
+
+                        Add To Queue
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         TODAY'S QUEUE
+    =========================================== -->
+
+    <div class="section">
+
+        <div class="section-header">
+
+            <h2>Today's Queue</h2>
+
+        </div>
+
+        <div class="section-body">
+
+            <div class="table-responsive">
+
+                <table class="table" id="queueTable">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>#</th>
+                            <th>Patient</th>
+                            <th>Visit Type</th>
+                            <th>Payment</th>
+                            <th>Time</th>
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<link rel="stylesheet" href="css/patients.css">

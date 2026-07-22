@@ -1,0 +1,357 @@
+<section class="page">
+
+    <!-- ==========================================
+         PAGE HEADER
+    =========================================== -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>STAFF MANAGEMENT</h1>
+
+            <p>
+                Manage hospital employees, user accounts and system roles.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         DASHBOARD SUMMARY
+    =========================================== -->
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>Total Staff</h3>
+
+            <h2 id="staff_total">0</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Active Staff</h3>
+
+            <h2 id="staff_active">0</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Inactive Staff</h3>
+
+            <h2 id="staff_inactive">0</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Administrators</h3>
+
+            <h2 id="staff_admins">0</h2>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         SEARCH TOOLBAR
+    =========================================== -->
+
+    <div class="toolbar">
+
+        <div class="toolbar-left">
+
+            <input
+
+                class="form-control"
+
+                type="search"
+
+                id="staff_search"
+
+                placeholder="Search by name, username, phone or email">
+
+        </div>
+
+        <div class="toolbar-right">
+
+            <button
+
+                class="btn btn-primary"
+
+                id="btnSearch">
+
+                Search
+
+            </button>
+
+            <button
+
+                class="btn btn-secondary"
+
+                id="btnRefresh">
+
+                Refresh
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         REGISTER / EDIT STAFF
+    =========================================== -->
+
+    <div class="section">
+
+        <div class="section-header">
+
+            <h2 id="staffFormTitle">
+
+                Register Staff
+
+            </h2>
+
+        </div>
+
+        <div class="section-body">
+
+            <form id="staffForm">
+
+                <!-- Hidden while creating a new staff member -->
+                <input
+                    type="hidden"
+                    id="staff_id"
+                    name="staff_id">
+
+                <div class="form-row">
+
+                    <input
+
+                        class="form-control"
+
+                        type="text"
+
+                        id="first_name"
+
+                        name="first_name"
+
+                        placeholder="First Name"
+
+                        required>
+
+                    <input
+
+                        class="form-control"
+
+                        type="text"
+
+                        id="last_name"
+
+                        name="last_name"
+
+                        placeholder="Last Name"
+
+                        required>
+
+                </div>
+
+                <div class="form-row">
+
+                    <input
+
+                        class="form-control"
+
+                        type="text"
+
+                        id="username"
+
+                        name="username"
+
+                        placeholder="Username"
+
+                        required>
+
+                    <input
+
+                        class="form-control"
+
+                        type="email"
+
+                        id="email"
+
+                        name="email"
+
+                        placeholder="Email Address">
+
+                </div>
+
+                <div class="form-row">
+
+                    <input
+
+                        class="form-control"
+
+                        type="tel"
+
+                        id="phone"
+
+                        name="phone"
+
+                        placeholder="Phone Number">
+
+                    <select
+
+                        class="form-control"
+
+                        id="role"
+
+                        name="role"
+
+                        required>
+
+                        <option value="">Select Role</option>
+
+                        <option value="superadmin">Super Administrator</option>
+
+                        <option value="admin">Administrator</option>
+
+                        <option value="doctor">Doctor</option>
+
+                        <option value="nurse">Nurse</option>
+
+                        <option value="labtech">Laboratory Technician</option>
+
+                        <option value="pharmtech">Pharmacy Technician</option>
+
+                        <option value="radiographer">Radiographer</option>
+
+                        <option value="accountant">Accountant</option>
+
+                        <option value="cashier">Cashier</option>
+
+                        <option value="receptionist">Receptionist</option>
+
+                        <option value="nutritionist">Nutritionist</option>
+
+                        <option value="cleaner">Cleaner</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-row form-actions">
+
+                    <button
+
+                        class="btn btn-primary"
+
+                        type="submit"
+
+                        id="btnSaveStaff">
+
+                        Register Staff
+
+                    </button>
+
+                    <button
+
+                        class="btn btn-secondary"
+
+                        type="reset"
+
+                        id="btnClearStaff">
+
+                        Clear Form
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         STAFF DIRECTORY
+    =========================================== -->
+
+    <div class="section">
+
+        <div class="section-header">
+
+            <h2>
+
+                Staff Directory
+
+            </h2>
+
+        </div>
+
+        <div class="section-body">
+
+            <table class="table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Name</th>
+
+                        <th>Role</th>
+
+                        <th></th>
+
+                        <th>Phone</th>
+
+                        <th>Email</th>
+
+                        <th>Status</th>
+
+                        <th width="260">
+
+                            Actions
+
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="staffTable">
+
+                    <tr>
+
+                        <td
+
+                            colspan="8"
+
+                            class="table-empty">
+
+                            No staff records found.
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+<link rel="stylesheet" href="css/staff.css">

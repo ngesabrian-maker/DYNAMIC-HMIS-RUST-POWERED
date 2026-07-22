@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FhETCH HMIS</title>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/css/app.css">
+
+    <script type="module" src="/js/app.js" defer></script>
+    <script type="module" src="/js/chat/chat.js" defer></script>
+   
+
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         TOP NAVIGATION
+    =========================================== -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <img src="/assets/FhETCH.png" alt="FhETCH Logo">
+
+            <div>
+
+                <h2>HMIS</h2>
+                
+
+            </div>
+        
+        </div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div class="navigation">
+
+            <button id="back-btn">
+                ◀ Back
+            </button>
+
+            <button id="forward-btn">
+                Forward ▶
+            </button>
+
+        </div>
+        <div class="topbar-center">
+
+            <span id="hospital-name">
+                Hospital
+            </span>
+
+        </div>
+
+        <div class="user-menu">
+
+            <span id="current-user">
+
+                Dr. Brian Ngesa
+
+            </span>
+
+            <span id="current-role">
+
+                Doctor
+
+            </span>
+            <span id="current-staff-id" hidden>
+
+            </span>
+            <button id="logout-btn">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ==========================================
+         APPLICATION LAYOUT
+    =========================================== -->
+
+    <div class="layout">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <nav id="sidebar-menu">
+
+                <!-- Generated according to role -->
+
+            </nav>
+        <button id="help-btn">
+            ❓ Help
+        </button>
+
+        <button id="settings-btn">
+            ⚙ Settings
+        </button>
+        </aside>
+
+        <!-- Dynamic Pages -->
+
+        <main id="app">
+
+            <!-- Router injects pages here -->
+
+        </main>
+
+    </div>
+
+<!-- ==========================================
+     FLOATING STAFF MESSENGER
+========================================== -->
+
+<button id="chat-btn" class="chat-btn">
+    💬
+</button>
+
+<!-- ==========================================
+     STAFF CHAT PANEL
+========================================== -->
+
+<aside id="chat-panel" class="chat-panel hidden">
+
+    <!-- ==========================
+         HEADER
+    =========================== -->
+
+    <div class="chat-header">
+
+        <div>
+
+            <h3 id="chat-title">
+                Staff Messenger
+            </h3>
+
+            <small id="chat-status">
+                Internal Staff Communication
+            </small>
+
+        </div>
+
+        <button id="close-chat">
+            ✕
+        </button>
+
+    </div>
+
+    <!-- ==================================================
+         HOME SCREEN (SEARCH + RECENT CHATS)
+    =================================================== -->
+
+    <div id="chat-home">
+
+        <!-- Search -->
+
+        <div class="chat-search">
+
+            <input
+                type="text"
+                id="staff-search"
+                placeholder="Search staff...">
+
+        </div>
+
+        <!-- Tabs -->
+
+        <div class="chat-tabs">
+
+            <button
+                id="recent-tab"
+                class="chat-tab active">
+
+                Recent
+
+            </button>
+
+            <button
+                id="contacts-tab"
+                class="chat-tab">
+
+                Contacts
+
+            </button>
+
+        </div>
+
+        <!-- Recent Chats -->
+        <!-- Existing ID preserved -->
+
+        <div id="chat-list" class="chat-list">
+
+        </div>
+
+        <!-- Staff Contacts -->
+        <!-- New container -->
+
+        <div
+            id="contact-list"
+            class="chat-list hidden">
+
+        </div>
+
+    </div>
+
+    <!-- ==================================================
+         CONVERSATION SCREEN
+    =================================================== -->
+
+    <div id="chat-conversation"
+         class="chat-conversation hidden">
+
+        <!-- Conversation Header -->
+
+        <div class="conversation-header">
+
+            <button id="back-chat">
+
+                ←
+
+            </button>
+
+            <div>
+
+                <strong id="conversation-name">
+
+                    Staff Name
+
+                </strong>
+
+                <br>
+
+                <small id="conversation-role">
+
+                    Role
+
+                </small>
+
+            </div>
+
+        </div>
+
+        <!-- Messages -->
+
+        <div id="conversation-messages"
+             class="conversation-messages">
+
+        </div>
+
+        <!-- Input -->
+
+        <div class="chat-input">
+
+            <textarea
+                id="message-text"
+                placeholder="Type a message..."></textarea>
+
+            <!-- Existing ID preserved -->
+
+            <button id="send-message">
+
+                Send
+
+            </button>
+
+        </div>
+
+    </div>
+
+</aside>
+
+</body>
+
+</html>

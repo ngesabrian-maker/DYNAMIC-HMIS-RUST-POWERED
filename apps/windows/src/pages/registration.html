@@ -1,0 +1,262 @@
+<section class="page">
+
+    <!-- ==========================================
+         PAGE HEADER
+    =========================================== -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>Patient Registration</h1>
+
+            <p>
+
+                Register a new patient into the Hospital Information Management System.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         PATIENT REGISTRATION
+    =========================================== -->
+
+    <div class="section">
+
+        <div class="section-header">
+
+            <h2>
+
+                Patient Details
+
+            </h2>
+
+        </div>
+
+        <div class="section-body">
+
+            <form id="patientRegForm">
+
+                <input
+                    type="hidden"
+                    id="patient_id"
+                    name="patient_id">
+
+                <!-- ======================================
+                     NAME
+                ======================================= -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="first_name">
+
+                            First Name
+
+                        </label>
+
+                        <input
+                            class="form-control"
+                            type="text"
+                            id="first_name"
+                            name="first_name"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="last_name">
+
+                            Last Name
+
+                        </label>
+
+                        <input
+                            class="form-control"
+                            type="text"
+                            id="last_name"
+                            name="last_name"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <!-- ======================================
+                     GENDER & DATE OF BIRTH
+                ======================================= -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="gender">
+
+                            Gender
+
+                        </label>
+
+                        <select
+                            class="form-control"
+                            id="gender"
+                            name="gender"
+                            required>
+
+                            <option value="">
+
+                                Select Gender
+
+                            </option>
+
+                            <option value="male">
+
+                                Male
+
+                            </option>
+
+                            <option value="female">
+
+                                Female
+
+                            </option>
+
+                            <option value="other">
+
+                                Other
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="date_of_birth">
+
+                            Date of Birth
+
+                        </label>
+
+                        <input
+                            class="form-control"
+                            type="date"
+                            id="date_of_birth"
+                            name="date_of_birth"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <!-- ======================================
+                     PATIENT NUMBER
+                ======================================= -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="patient_number">
+
+                            Patient Number
+
+                        </label>
+
+                        <input
+                            class="form-control"
+                            type="text"
+                            id="patient_number"
+                            name="patient_number"
+                            readonly>
+
+                    </div>
+
+                </div>
+
+                <!-- ======================================
+                     PHONE
+                ======================================= -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="phone">
+
+                            Phone Number
+
+                        </label>
+
+                        <input
+                            class="form-control"
+                            type="tel"
+                            id="phone"
+                            name="phone">
+
+                    </div>
+
+                </div>
+
+                <!-- ======================================
+                     ADDRESS
+                ======================================= -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="address">
+
+                            Physical Address
+
+                        </label>
+
+                        <textarea
+                            class="form-control"
+                            id="address"
+                            name="address"
+                            rows="4"></textarea>
+
+                    </div>
+
+                </div>
+
+                <!-- ======================================
+                     ACTIONS
+                ======================================= -->
+
+                <div class="form-row form-actions">
+
+                    <button
+                        class="btn btn-primary"
+                        type="submit">
+
+                        Register Patient
+
+                    </button>
+
+                    <button
+                        class="btn btn-secondary"
+                        type="reset">
+
+                        Clear Form
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<link rel="stylesheet" href="css/patients.css">
