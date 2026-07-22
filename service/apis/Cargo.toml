@@ -1,9 +1,84 @@
 [package]
-name = "hmis-api"
+name = "mysql_server"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
-actix-web = "4"
+# Web Framework
+actix-web = "4.11"
+actix-cors = "0.7"
+actix-files = "0.6"
+actix-multipart = "0.7"
+
+# Async Runtime
+tokio = { version = "1", features = ["full"] }
+
+# Serialization
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+
+# Database (MySQL)
+sqlx = { version = "0.8", features = [
+    "runtime-tokio-rustls",
+    "mysql",
+    "macros",
+    "chrono",
+    "uuid"
+] }
+
+# Environment Variables
+dotenvy = "0.15"
+
+# Logging
+env_logger = "0.11"
+log = "0.4"
+
+# Authentication
+jsonwebtoken = "9"
+argon2 = "0.5"
+
+# Date & Time
+chrono = { version = "0.4", features = ["serde"] }
+
+# UUID
+uuid = { version = "1", features = ["v4", "serde"] }
+
+# Utilities
+anyhow = "1"
+thiserror = "2"
+
+# Regular Expressions
+regex = "1"
+
+# URL Encoding
+urlencoding = "2"
+
+# Random Values
+rand = "0.9"
+
+# MIME Detection
+mime = "0.3"
+
+# Excel Reports
+calamine = "0.28"
+rust_xlsxwriter = "0.90"
+
+# PDF Generation
+printpdf = "0.8"
+
+# Email
+lettre = "0.11"
+
+# SMS Gateway
+reqwest = { version = "0.12", features = ["json"] }
+
+# Image Processing
+image = "0.25"
+
+# Encryption
+aes-gcm = "0.10"
+
+# QR Codes
+qrcode = "0.14"
+
+bcrypt = "0.17"
