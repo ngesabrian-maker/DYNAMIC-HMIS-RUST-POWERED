@@ -1,6 +1,4 @@
-I updated the README draft to reflect that the project supports both MySQL and PostgreSQL. Use this as the root README.md.
 
-```markdown
 # Dynamic Rust HMIS
 
 A modern, Rust-powered Health Management Information System (HMIS) platform designed for multi-channel access by staff, administrators, and operational teams. This repository is organized as a modular monorepo with a shared Rust API layer, web, desktop, and mobile clients, shared domain models, and a relational database layer that supports both PostgreSQL and MySQL.
